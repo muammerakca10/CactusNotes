@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">CactusNotes</string>
+    <string name="app_name">Cactus Notes</string>
+    <string name="signupActivity">Sign up</string>
+    <string name="email_hint">E-Mail</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="signup_button">SIGN UP</string>
+    <string name="already_account">ALREADY HAVE AN ACCOUNT?</string>
+    <string name="signUp_activity_name">Sign Up</string>
 </resources>

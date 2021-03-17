@@ -1,4 +1,4 @@
-package com.example.cactusnotes
+package com.muammerakca.cactusnotes
 
 import org.junit.Test
 

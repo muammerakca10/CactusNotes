@@ -1,4 +1,4 @@
-package com.example.cactusnotes
+package com.muammerakca.cactusnotes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
