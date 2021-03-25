@@ -18,80 +18,35 @@ class SignUpActivity : AppCompatActivity() {
         val signupButton: MaterialButton = findViewById(R.id.signupButton)
         val alreadySignButton: Button = findViewById(R.id.alreadySignButton)
 
-        //-------------------------------------------------------------------------------------------
-
-        //Email Control Start
-        fun emailNullEmptyControl(email: String) = !email.isEmpty()
-
-        fun emailContainDotControl(email: String) = email.contains(".")
-
-        fun emailCannotContainSpaceControl(email: String) = !email.contains(" ")
-
-        fun emailContainAtControl(email: String) = email.contains("@")
-
-        fun emailMinCharacterControl(email: String) = email.length > 5
-
-        fun emailMaxCharacterControl(email: String) = email.length < 50
-        // Email Control End
-
         //Email Error Messages Start
         fun emailErrorMessages(email: String) = when {
-            !emailNullEmptyControl(email) -> "Email is required."
-            !emailContainDotControl(email) || !emailContainAtControl(email) || !emailMinCharacterControl(email) || !emailMaxCharacterControl(email) -> "Email is invalid."
-            !emailCannotContainSpaceControl(email) -> "Email cannot contain space"
+            email.isEmpty() -> getString(R.string.email_required)
+            !email.contains(".") || !email.contains("@") || email.length <= 5 || email.length >= 50 -> getString(R.string.email_invalid)
+            email.contains(" ") -> getString(R.string.email_cannot_space)
             else -> null
         } //Email Error Messages Finish
 
-        //Username Controls Start
-        fun usernameNullEmptyControl(username: String) = !username.isEmpty()
-
-        fun usernameEligibleCharactersControl(username: String) =
-            username.all { it.isDigit() || it.isLowerCase() || it == '_' }
-
-        fun usernameMinCharacterControl(username: String) = username.length > 2
-
-        fun usernameMaxCharacterControl(username: String) = username.length < 20
-        //Username Controls Finish
-
         //Username Error Messages Start
         fun usernameErrorMessages(username: String) = when {
-            !usernameNullEmptyControl(username) -> "Username is required."
-            !usernameEligibleCharactersControl(username) -> "Username can only include a-z, 0-9 and _ characters."
-            !usernameMinCharacterControl(username) -> "Username is too short."
-            !usernameMaxCharacterControl(username) -> "Username is too long."
+            username.isEmpty() -> getString(R.string.username_required)
+            !username.all { it.isDigit() || it.isLowerCase() || it == '_' } -> getString(R.string.username_only_this_characters)
+            username.length <= 2 -> getString(R.string.username_short)
+            username.length >= 20 -> getString(R.string.username_long)
             else -> null
         } //Username Error Messages Finish
 
-        //Password Controls Start
-        fun passwordNullOrEmptyControl(password: String) = !password.isNullOrEmpty()
-
-        fun passwordDigitControl(password: String) = password.any { it.isDigit() }
-
-        fun passwordUpperCaseControl(password: String) = password.any { it.isUpperCase() }
-
-        fun passwordLowerCaseControl(password: String) = password.any { it.isLowerCase() }
-
-        fun passwordLetterOrDigitCharacterControl(password: String) = password.any { it.isLetterOrDigit() }
-
-        fun passwordMinCharacterControl(password: String) = password.length > 7
-
-        fun passwordMaxCharacterControl(password: String) = password.length < 40
-
-        fun passwordSpaceControl(password: String) = !password.contains(" ")
-        //Password Controls Finish
-
         //Password Error Messages Start
         fun passwordErrorMessages(password: String) = when {
-            !passwordNullOrEmptyControl(password) -> "Password is required."
-            !passwordDigitControl(password) || !passwordUpperCaseControl(password) || !passwordLowerCaseControl(password) || !passwordLetterOrDigitCharacterControl(password) -> "Password must contain one digit, one uppercase letter, one lowercase letter and one special character."
-            !passwordMinCharacterControl(password) -> "Password is too short."
-            !passwordMaxCharacterControl(password) -> "Password is too long."
-            !passwordSpaceControl(password) -> "Password cannot contain space."
+            password.isEmpty() -> getString(R.string.password_required)
+            !password.any { it.isDigit() } || !password.any { it.isDigit() } || !password.any { it.isLowerCase() } || !password.any { it.isLetterOrDigit() } -> getString(R.string.password_must_contains_character)
+            password.length < 8 -> getString(R.string.password_short)
+            password.length >= 40 -> getString(R.string.password_long)
+            password.contains(" ") -> getString(R.string.password_cannot_space)
             else -> null
         } //Password Error Messages Finish
 
         //Button Click Start
-        signupButton.setOnClickListener() {
+        signupButton.setOnClickListener {
             var email =
                 textInputEmail.editText!!.text.toString()
 
@@ -111,7 +66,7 @@ class SignUpActivity : AppCompatActivity() {
             textInputPassword.error = passwordErrorMessages(password)
 
             if (!emailHasError && !usernameHasError && !passwordHasError)
-                Toast.makeText(this, "Successful", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.successful), Toast.LENGTH_LONG).show()
         } //Button Click End
     }
 }
