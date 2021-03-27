@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Cactus_Notes</string>
-    <string name="signupActivity">Sign_Up</string>
+    <string name="app_name">Cactus Notes</string>
+    <string name="sign_up_activity">Sign Up</string>
     <string name="email_hint">E-Mail</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="signup_button">SIGN UP</string>
     <string name="already_account">ALREADY HAVE AN ACCOUNT?</string>
-    <string name="signUp_activity_name">Sign_Up</string>
+    <string name="sign_up_activity_name">Sign Up</string>
     <string name="email_required">Email is required.</string>
     <string name="email_invalid">Email is invalid.</string>
     <string name="email_cannot_space">Email cannot contain space.</string>

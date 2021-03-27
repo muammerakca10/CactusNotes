@@ -12,7 +12,7 @@
         android:theme="@style/Theme.CactusNotes">
         <activity
             android:name="com.muammerakca.cactusnotes.SignUpActivity"
-            android:label="@string/signUp_activity_name">
+            android:label="@string/sign_up_activity_name">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
