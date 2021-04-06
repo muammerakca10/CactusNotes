@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">CactusNotes</string>
+    <string name="app_name">Cactus Notes</string>
+    <string name="sign_up_activity">Sign Up</string>
+    <string name="email_hint">E-Mail</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="signup_button">SIGN UP</string>
+    <string name="already_account">ALREADY HAVE AN ACCOUNT?</string>
+    <string name="sign_up_activity_name">Sign Up</string>
+    <string name="email_required">Email is required.</string>
+    <string name="email_invalid">Email is invalid.</string>
+    <string name="email_cannot_space">Email cannot contain space.</string>
+    <string name="username_required">Username is required.</string>
+    <string name="username_only_this_characters">Username can only include a–z, 0–9 and _ characters.</string>
+    <string name="username_short">Username is too short.</string>
+    <string name="username_long">Username is too long.</string>
+    <string name="password_required">Password is required.</string>
+    <string name="password_must_contains_character">Password must contain one digit, one uppercase letter, one lowercase letter and one special character.</string>
+    <string name="password_short">Password is too short.</string>
+    <string name="password_long">Password is too long.</string>
+    <string name="password_cannot_space">Password cannot contain space.</string>
+    <string name="successful">Successful</string>
 </resources>
